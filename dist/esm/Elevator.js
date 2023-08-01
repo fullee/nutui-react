@@ -90,7 +90,7 @@ var Elevator = function Elevator2(props) {
     if (index > state.current.listHeight.length - 2) {
       cacheIndex = state.current.listHeight.length - 2;
     }
-    setCodeIndex(cacheIndex < 0 ? 0 : cacheIndex);
+    setCodeIndex(cacheIndex);
     if (listview.current) {
       listview.current.scrollTo(0, state.current.listHeight[cacheIndex]);
     }
@@ -167,7 +167,7 @@ var Elevator = function Elevator2(props) {
     className: "".concat(classPrefix, "__list__fixed")
   }, React__default.createElement("span", {
     className: "".concat(classPrefix, "__list__fixed__title")
-  }, list[currentIndex][floorKey])) : null, React__default.createElement("div", {
+  }, list[currentIndex < 0 ? 0 : currentIndex][floorKey])) : null, React__default.createElement("div", {
     className: "".concat(classPrefix, "__list"),
     style: {
       height: Number.isNaN(+height) ? height : "".concat(height, "px")
@@ -195,7 +195,7 @@ var Elevator = function Elevator2(props) {
     })));
   }))), showKeys ? React__default.createElement(React__default.Fragment, null, list.length && scrollStart ? React__default.createElement("div", {
     className: classNames((_classNames2 = {}, _defineProperty(_classNames2, "".concat(classPrefix, "__code--current"), true), _defineProperty(_classNames2, "".concat(classPrefix, "__code--current--current"), true), _classNames2))
-  }, list[codeIndex][floorKey]) : null, React__default.createElement("div", {
+  }, list[codeIndex < 0 ? 0 : codeIndex][floorKey]) : null, React__default.createElement("div", {
     className: "".concat(classPrefix, "__bars")
   }, React__default.createElement(animated.div, _objectSpread(_objectSpread({
     className: "".concat(classPrefix, "__bars__inner")
@@ -206,7 +206,7 @@ var Elevator = function Elevator2(props) {
   }), list.map(function(item, index) {
     var _classNames3;
     return React__default.createElement("div", {
-      className: classNames((_classNames3 = {}, _defineProperty(_classNames3, "".concat(classPrefix, "__bars__inner__item"), true), _defineProperty(_classNames3, "".concat(classPrefix, "__bars__inner__item--active"), item[floorKey] === list[currentIndex][floorKey]), _classNames3)),
+      className: classNames((_classNames3 = {}, _defineProperty(_classNames3, "".concat(classPrefix, "__bars__inner__item"), true), _defineProperty(_classNames3, "".concat(classPrefix, "__bars__inner__item--active"), item[floorKey] === list[currentIndex < 0 ? 0 : currentIndex][floorKey]), _classNames3)),
       "data-index": index,
       key: index,
       onClick: function onClick() {

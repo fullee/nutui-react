@@ -9,7 +9,7 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 /*!
-* @nutui/nutui-react v2.0.8 Tue Aug 01 2023 18:03:29 GMT+0800 (中国标准时间)
+* @nutui/nutui-react v2.0.8 Tue Aug 01 2023 20:49:42 GMT+0800 (中国标准时间)
 * (c) 2023 @jdf2e.
 * Released under the MIT License.
 */
@@ -11508,7 +11508,7 @@ Please add \`${key}Action\` when creating your handler.`);
       if (index > state.current.listHeight.length - 2) {
         cacheIndex = state.current.listHeight.length - 2;
       }
-      setCodeIndex(cacheIndex < 0 ? 0 : cacheIndex);
+      setCodeIndex(cacheIndex);
       if (listview.current) {
         listview.current.scrollTo(0, state.current.listHeight[cacheIndex]);
       }
@@ -11574,7 +11574,7 @@ Please add \`${key}Action\` when creating your handler.`);
         listview.current.addEventListener("scroll", listViewScroll);
       }
     }, [listview]);
-    return /* @__PURE__ */ React.createElement("div", { className: `${classPrefix2} ${className}`, style, ...rest }, sticky && scrollY > 0 ? /* @__PURE__ */ React.createElement("div", { className: `${classPrefix2}__list__fixed` }, /* @__PURE__ */ React.createElement("span", { className: `${classPrefix2}__list__fixed__title` }, list[currentIndex][floorKey])) : null, /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", { className: `${classPrefix2} ${className}`, style, ...rest }, sticky && scrollY > 0 ? /* @__PURE__ */ React.createElement("div", { className: `${classPrefix2}__list__fixed` }, /* @__PURE__ */ React.createElement("span", { className: `${classPrefix2}__list__fixed__title` }, list[currentIndex < 0 ? 0 : currentIndex][floorKey])) : null, /* @__PURE__ */ React.createElement(
       "div",
       {
         className: `${classPrefix2}__list`,
@@ -11604,7 +11604,7 @@ Please add \`${key}Action\` when creating your handler.`);
           [`${classPrefix2}__code--current--current`]: true
         })
       },
-      list[codeIndex][floorKey]
+      list[codeIndex < 0 ? 0 : codeIndex][floorKey]
     ) : null, /* @__PURE__ */ React.createElement("div", { className: `${classPrefix2}__bars` }, /* @__PURE__ */ React.createElement(
       animated.div,
       {
@@ -11618,7 +11618,7 @@ Please add \`${key}Action\` when creating your handler.`);
           {
             className: classnamesExports({
               [`${classPrefix2}__bars__inner__item`]: true,
-              [`${classPrefix2}__bars__inner__item--active`]: item[floorKey] === list[currentIndex][floorKey]
+              [`${classPrefix2}__bars__inner__item--active`]: item[floorKey] === list[currentIndex < 0 ? 0 : currentIndex][floorKey]
             }),
             "data-index": index,
             key: index,
