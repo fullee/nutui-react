@@ -23,6 +23,7 @@ export interface ElevatorProps extends BasicComponent {
   onItemClick: (key: string, item: ElevatorData) => void
   onIndexClick: (key: string) => void
 }
+
 const defaultProps = {
   ...ComponentDefaults,
   height: '200px',
@@ -33,11 +34,14 @@ const defaultProps = {
   titleHeight: 35,
   showKeys: true,
 } as ElevatorProps
+
 interface ElevatorData {
   name: string
   id: number | string
+
   [key: string]: string | number
 }
+
 export const Elevator: FunctionComponent<
   Partial<ElevatorProps> & React.HTMLAttributes<HTMLDivElement>
 > & { Context: typeof elevatorContext } = (props) => {
@@ -73,7 +77,7 @@ export const Elevator: FunctionComponent<
   })
   const [scrollY, setScrollY] = useState(0)
   const [currentData, setCurrentData] = useState<ElevatorData>(
-    {} as ElevatorData
+    {} as ElevatorData,
   )
   const [currentKey, setCurrentKey] = useState('')
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -122,7 +126,7 @@ export const Elevator: FunctionComponent<
       cacheIndex = state.current.listHeight.length - 2
     }
 
-    setCodeIndex(cacheIndex111)
+    setCodeIndex(cacheIndex < 0 ? 0 : cacheIndex)
     if (listview.current) {
       listview.current.scrollTo(0, state.current.listHeight[cacheIndex])
     }
@@ -226,8 +230,8 @@ export const Elevator: FunctionComponent<
                         className={classNames({
                           [`${classPrefix}__list__item__name`]: true,
                           [`${classPrefix}__list__item__name--highcolor`]:
-                            currentData.id === subitem.id &&
-                            currentKey === item[floorKey],
+                          currentData.id === subitem.id &&
+                          currentKey === item[floorKey],
                         })}
                         key={subitem.id}
                         onClick={() => handleClickItem(item[floorKey], subitem)}
@@ -274,7 +278,7 @@ export const Elevator: FunctionComponent<
                     className={classNames({
                       [`${classPrefix}__bars__inner__item`]: true,
                       [`${classPrefix}__bars__inner__item--active`]:
-                        item[floorKey] === list[currentIndex][floorKey],
+                      item[floorKey] === list[currentIndex][floorKey],
                     })}
                     data-index={index}
                     key={index}
