@@ -126,7 +126,7 @@ export const Elevator: FunctionComponent<
       cacheIndex = state.current.listHeight.length - 2
     }
 
-    setCodeIndex(cacheIndex < 0 ? 0 : cacheIndex)
+    setCodeIndex(cacheIndex)
     if (listview.current) {
       listview.current.scrollTo(0, state.current.listHeight[cacheIndex])
     }
@@ -208,7 +208,7 @@ export const Elevator: FunctionComponent<
       {sticky && scrollY > 0 ? (
         <div className={`${classPrefix}__list__fixed`}>
           <span className={`${classPrefix}__list__fixed__title`}>
-            {list[currentIndex][floorKey]}
+            {list[currentIndex < 0 ? 0 : currentIndex][floorKey]}
           </span>
         </div>
       ) : null}
@@ -263,7 +263,7 @@ export const Elevator: FunctionComponent<
                 [`${classPrefix}__code--current--current`]: true,
               })}
             >
-              {list[codeIndex][floorKey]}
+              {list[codeIndex < 0 ? 0 : codeIndex][floorKey]}
             </div>
           ) : null}
           <div className={`${classPrefix}__bars`}>
@@ -278,7 +278,7 @@ export const Elevator: FunctionComponent<
                     className={classNames({
                       [`${classPrefix}__bars__inner__item`]: true,
                       [`${classPrefix}__bars__inner__item--active`]:
-                      item[floorKey] === list[currentIndex][floorKey],
+                      item[floorKey] === list[currentIndex < 0 ? 0 : currentIndex][floorKey],
                     })}
                     data-index={index}
                     key={index}
