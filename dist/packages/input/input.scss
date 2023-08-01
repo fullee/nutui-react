@@ -1,0 +1,40 @@
+.nut-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  padding: $input-padding;
+  line-height: 24px;
+  background: $white;
+  font-size: $input-font-size;
+  box-sizing: border-box;
+  border-bottom: $input-border-bottom-width solid $input-border-bottom;
+
+  .nut-icon {
+    color: #c8c9cc;
+  }
+
+  .nut-input-native {
+    width: 100%;
+    color: $gray1;
+    flex: 1;
+    padding: 0;
+    border: 0;
+    outline: 0 none;
+    font: inherit;
+    text-decoration: none;
+  }
+
+  &-disabled {
+    color: $input-disabled-color !important;
+
+    input:disabled {
+      background: none;
+      color: $input-disabled-color;
+      cursor: not-allowed;
+      opacity: 1;
+      -webkit-text-fill-color: $input-disabled-color;
+    }
+  }
+}

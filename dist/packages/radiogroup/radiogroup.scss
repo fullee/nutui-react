@@ -1,0 +1,52 @@
+.nut-radiogroup {
+  .nut-radio {
+    margin: $radiogroup-radio-margin;
+
+    &__label {
+      margin: $radiogroup-radio-label-margin;
+    }
+
+    &__button {
+      background-color: $radio-button-background;
+    }
+  }
+
+  &--vertical {
+    .nut-radio {
+      &.nut-radio--reverse {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      &__button {
+        border: 1px solid $radio-button-background;
+      }
+
+      &__button--active {
+        border-color: $radio-label-button-border-color;
+        background-color: $radio-label-button-background;
+      }
+    }
+  }
+
+  &--horizontal {
+    .nut-radio {
+      display: inline-flex;
+
+      &__button {
+        border: 1px solid $gray6;
+      }
+
+      &__button--active {
+        border-color: $radio-label-button-border-color;
+        background-color: $radio-label-button-background;
+      }
+    }
+  }
+
+  .nut-radio__button--active.nut-radio__button--disabled {
+    background: $radio-button-disabled-active-background;
+    color: $radio-button-disabled-active-color;
+    border: 1px solid $radio-button-disabled-active-border-color;
+  }
+}

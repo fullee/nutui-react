@@ -1,0 +1,59 @@
+
+
+.nut-actionsheet {
+  display: block;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  text-align: center;
+
+  .nut-popup-title {
+    border-bottom: 1px solid $actionsheet-border-color;
+  }
+
+  &__description {
+    padding: 10px;
+    display: block;
+    font-size: $font-size-base;
+    color: $title-color2;
+    margin-inline-start: 0px;
+  }
+
+  &__list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__cancel,
+  &__item {
+    display: block;
+    padding: 10px;
+    text-align: $actionsheet-item-text-align;
+    line-height: $actionsheet-item-line-height;
+    font-size: $font-size-base;
+    color: $actionsheet-item-color;
+    background-color: $background-color3;
+    cursor: pointer;
+
+    &-description {
+      display: block;
+      font-size: $font-size-small;
+      color: $title-color2;
+    }
+
+    &.danger {
+      color: $actionsheet-item-danger;
+    }
+
+    &.disabled {
+      color: #e1e1e1 !important;
+      cursor: not-allowed;
+    }
+  }
+
+  &__cancel {
+    margin-top: 5px;
+    border-top: 1px solid $actionsheet-border-color;
+  }
+}

@@ -1,0 +1,38 @@
+
+
+.nut-cell {
+  position: relative;
+  display: flex;
+  width: 100%;
+  line-height: $cell-line-height;
+  padding: $cell-padding;
+  background-color: $cell-background-color;
+  border-radius: $cell-border-radius;
+  box-shadow: $cell-box-shadow;
+  font-size: $cell-title-font-size;
+  color: $cell-title-color;
+  margin: 10px 0;
+  box-sizing: border-box;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__description {
+    font-size: $cell-description-font-size;
+    color: $cell-description-color;
+  }
+
+  &__extra {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    word-break: break-all;
+    font-size: $cell-extra-font-size;
+    color: $cell-extra-color;
+  }
+}

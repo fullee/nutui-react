@@ -1,0 +1,46 @@
+
+
+
+.nut-timeselect {
+  background-color: $background-color3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__title {
+    height: $timeselect-title-height;
+    line-height: $timeselect-title-line-height;
+    margin-bottom: 10px;
+    font-size: $timeselect-title-font-size;
+    background: $timeselect-title-background;
+    color: $title-color;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+  }
+
+  &__content-left {
+    width: $timeselect-date-width;
+    min-width: $timeselect-date-width;
+    height: 100%;
+    overflow: auto;
+    background: $background-color2;
+  }
+}
+
+.nut-timepannel {
+  height: $timeselect-date-height;
+  line-height: $timeselect-date-line-height;
+  text-align: center;
+  color: $timeselect-date-color;
+  font-size: $timeselect-date-font-size;
+
+  &.active {
+    background: $background-color3;
+    color: $timeselect-date-active-color;
+    font-weight: 700;
+  }
+}

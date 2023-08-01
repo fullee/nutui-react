@@ -1,0 +1,100 @@
+
+
+.nut-numberkeyboard {
+  width: $numberkeyboard-width;
+  padding: $numberkeyboard-padding;
+  background-color: $numberkeyboard-background-color;
+  user-select: none;
+  background-color: $gray4;
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    height: $numberkeyboard-header-height;
+    padding: $numberkeyboard-header-padding;
+    color: $numberkeyboard-header-color;
+    font-size: $numberkeyboard-header-font-size;
+
+    &__title {
+      color: $title-color;
+      display: inline-block;
+    }
+
+    &__close {
+      position: absolute;
+      display: block;
+      right: 0;
+      padding: $numberkeyboard-header-close-padding;
+      color: $numberkeyboard-header-close-color;
+      font-size: $numberkeyboard-header-close-font-size;
+      background-color: $numberkeyboard-header-close-background-color;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    display: flex;
+    padding: 6px 0 0 6px;
+
+    &__keys {
+      display: flex;
+      flex: 3;
+      flex-wrap: wrap;
+    }
+
+    &__wrapper {
+      position: relative;
+      flex: 1;
+      flex-basis: 33%;
+      box-sizing: border-box;
+      padding: 0 6px 6px 0;
+      background-color: $gray5;
+
+      .key {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $numberkeyboard-key-height;
+        font-size: $numberkeyboard-key-font-size;
+        line-height: $numberkeyboard-key-line-height;
+        background-color: $numberkeyboard-key-background-color;
+        color: $numberkeyboard-key-font-color;
+        border-radius: $numberkeyboard-key-border-radius;
+        cursor: pointer;
+        &.active {
+          background-color: $numberkeyboard-key-active-background-color;
+        }
+      }
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .nut-numberkeyboard__body__wrapper {
+      .key {
+        position: absolute;
+        top: 0;
+        right: 6px;
+        bottom: 6px;
+        left: 0;
+        height: auto;
+      }
+
+      .confirm {
+        font-size: $numberkeyboard-key-confirm-font-size;
+        color: $numberkeyboard-key-confirm-font-color;
+        background-color: $numberkeyboard-key-confirm-background-color;
+        &.active {
+          background-color: rgba(255, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+}

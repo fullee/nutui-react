@@ -1,0 +1,65 @@
+.nut-inputnumber {
+  display: $inputnumber-display;
+  align-items: center;
+
+  .nut-input-minus,
+  .nut-input-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $inputnumber-button-width;
+    height: $inputnumber-button-height;
+    background-color: $inputnumber-button-background-color;
+    border-radius: $inputnumber-button-border-radius;
+  }
+
+  &--disabled {
+    input {
+      color: $inputnumber-icon-void-color !important;
+    }
+  }
+
+  &__icon {
+    color: $inputnumber-icon-color;
+    font-size: $inputnumber-icon-size;
+    cursor: pointer;
+
+    &--disabled {
+      color: $inputnumber-icon-disabled-color;
+      cursor: not-allowed;
+    }
+  }
+
+  input,
+  .nut-number-input,
+  &__text--readonly {
+    width: $inputnumber-input-width;
+    height: $inputnumber-input-height;
+    text-align: center;
+    outline: none;
+    border: $inputnumber-input-border;
+    margin: $inputnumber-input-margin;
+    color: $inputnumber-input-font-color;
+    background-color: $inputnumber-input-background-color;
+    border-radius: $inputnumber-input-border-radius;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button,
+  .nut-number-input::-webkit-outer-spin-button,
+  .nut-number-input::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.nut-icon-Minus,
+.nut-icon-minus {
+  --nut-icon-width: 20px;
+  --nut-icon-height: 20px;
+}
+
+.nut-icon-Plus,
+.nut-icon-plus {
+  --nut-icon-width: 20px;
+  --nut-icon-height: 20px;
+}

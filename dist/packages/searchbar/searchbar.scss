@@ -1,0 +1,88 @@
+.nut-searchbar {
+  display: flex;
+  align-items: center;
+  width: $searchbar-width;
+  padding: $searchbar-padding;
+  background: $searchbar-background;
+  color: $gray1;
+  box-sizing: border-box;
+  justify-content: center;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $searchbar-input-height;
+    background: $searchbar-input-background;
+    border-radius: $searchbar-content-border-radius;
+  }
+
+  &__icon {
+    padding: 0 5px 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__rightin {
+    display: flex;
+    padding: 0 5px;
+  }
+
+  &__input-box {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__input {
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    width: $searchbar-input-width;
+    height: $searchbar-input-height;
+    line-height: $searchbar-input-height;
+    width: 100%;
+    padding: $searchbar-input-padding;
+    border-radius: 0;
+    font-size: $font-size-small;
+    color: $searchbar-input-text-color;
+    caret-color: $searchbar-input-curror-color;
+    background: transparent;
+    text-align: $searchbar-input-text-align;
+  }
+
+  &__round {
+    border-radius: $searchbar-input-border-radius;
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+  }
+
+  &__clear {
+    padding: $searchbar-clear-icon-padding;
+
+    i {
+      color: $gray1 !important;
+    }
+  }
+
+  .pos-right {
+    right: 40px;
+  }
+
+  &__left {
+    display: flex;
+    padding: $searchbar-left-padding;
+    font-size: $searchbar-left-fontsize;
+    color: $searchbar-left-color;
+  }
+
+  &__right {
+    display: flex;
+    padding: $searchbar-right-padding;
+    font-size: $searchbar-right-fontsize;
+    color: $searchbar-right-color;
+  }
+}
